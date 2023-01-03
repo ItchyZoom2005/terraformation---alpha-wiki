@@ -1,0 +1,16 @@
+name: Hello
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.arrasverymoe }}
+        issue-message: "Welcome!"
+        pr-message: "Congrats You have made you first issue!"
